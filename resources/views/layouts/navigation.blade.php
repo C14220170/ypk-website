@@ -43,10 +43,10 @@
                                 p-2 space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                                 transition-all duration-200">
 
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-gray-800 rounded-lg">Sejarah YPK</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-gray-800 rounded-lg">Kata Pengantar</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-gray-800 rounded-lg">Visi, Misi & Nilai YPK</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-gray-800 rounded-lg">Program YPK</a>
+                        <a href="sejarah" class="block px-4 py-2 hover:bg-gray-100 text-gray-800 rounded-lg">Sejarah YPK</a>
+                        <a href="pengantar" class="block px-4 py-2 hover:bg-gray-100 text-gray-800 rounded-lg">Kata Pengantar</a>
+                        <a href="visi-misi" class="block px-4 py-2 hover:bg-gray-100 text-gray-800 rounded-lg">Visi, Misi & Nilai YPK</a>
+                        <a href="program" class="block px-4 py-2 hover:bg-gray-100 text-gray-800 rounded-lg">Program YPK</a>
                     </div>
                 </li>
 
@@ -83,7 +83,7 @@
                                 p-2 space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                                 transition-all duration-200">
 
-                        <a href="/donasi" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Donasi Sekarang</a>
+                        <a href="donasi" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Donasi Sekarang</a>
                         <a href="relawan" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Jadi Relawan YPK</a>
                     </div>
                 </li>
@@ -122,10 +122,10 @@
                 <span x-show="openSub">▲</span>
             </button>
             <div x-show="openSub" class="ml-4 space-y-1 text-gray-200">
-                <a href="#" class="block py-1">Sejarah YPK</a>
-                <a href="#" class="block py-1">Kata Pengantar</a>
-                <a href="#" class="block py-1">Visi, Misi & Nilai YPK</a>
-                <a href="#" class="block py-1">Program YPK</a>
+                <a href="sejarah" class="block py-1">Sejarah YPK</a>
+                <a href="pengantar" class="block py-1">Kata Pengantar</a>
+                <a href="visi-misi" class="block py-1">Visi, Misi & Nilai YPK</a>
+                <a href="program" class="block py-1">Program YPK</a>
             </div>
         </div>
 
