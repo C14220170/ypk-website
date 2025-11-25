@@ -83,8 +83,8 @@
                                 p-2 space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                                 transition-all duration-200">
 
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Donasi Sekarang</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Jadi Relawan YPK</a>
+                        <a href="/donasi" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Donasi Sekarang</a>
+                        <a href="relawan" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Jadi Relawan YPK</a>
                     </div>
                 </li>
 
@@ -152,8 +152,8 @@
                 <span x-show="openSub">▲</span>
             </button>
             <div x-show="openSub" class="ml-4 space-y-1 text-gray-200">
-                <a href="#" class="block py-1">Donasi Sekarang</a>
-                <a href="#" class="block py-1">Jadi Relawan YPK</a>
+                <a href="donasi" class="block py-1">Donasi Sekarang</a>
+                <a href="relawan" class="block py-1">Jadi Relawan YPK</a>
             </div>
         </div>
 
