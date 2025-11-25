@@ -1,6 +1,6 @@
 <x-app-layout>
     {{-- Navbar --}}
-    <nav class="absolute top-0 left-0 w-full flex justify-between items-center px-10 py-6 bg-transparent z-50">
+    {{-- <nav class="absolute top-0 left-0 w-full flex justify-between items-center px-10 py-6 bg-transparent z-50">
         <div class="flex items-center space-x-2">
             <img src="/images/logo.png" alt="Logo" class="w-24 h-24">
         </div>
@@ -12,7 +12,7 @@
             <li><a href="#" class="hover:text-green-700 font-bold">Blog</a></li>
             <li><a href="#" class="hover:text-green-700 font-bold">Contact</a></li>
         </ul>
-    </nav>
+    </nav> --}}
 
     {{-- Hero Slider --}}
     <div 
