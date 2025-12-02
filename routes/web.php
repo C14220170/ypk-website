@@ -27,6 +27,21 @@ Route::get('/program', function () {
     return view('tentang.program');
 });
 
+Route::get('/berita', function () {
+    return view('terhubung.berita');
+});
+Route::get('/buletin', function () {
+    return view('terhubung.buletin');
+});
+Route::get('/hubungi', function () {
+    return view('terhubung.hubungi');
+});
+Route::get('/saran', function () {
+    return view('terhubung.saran');
+});
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

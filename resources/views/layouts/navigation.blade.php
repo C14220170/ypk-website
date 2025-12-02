@@ -63,10 +63,10 @@
                                 p-2 space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                                 transition-all duration-200">
 
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Berita Terbaru</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Buletin Bulanan & Tahunan YPK</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Hubungi YPK</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Saran & Masukan YPK</a>
+                        <a href="berita" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Berita Terbaru</a>
+                        <a href="buletin" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Buletin Bulanan & Tahunan YPK</a>
+                        <a href="hubungi" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Hubungi YPK</a>
+                        <a href="saran" class="block px-4 py-2 hover:bg-gray-100 rounded-lg">Saran & Masukan YPK</a>
                     </div>
                 </li>
 
@@ -137,10 +137,10 @@
                 <span x-show="openSub">▲</span>
             </button>
             <div x-show="openSub" class="ml-4 space-y-1 text-gray-200">
-                <a href="#" class="block py-1">Berita Terbaru</a>
-                <a href="#" class="block py-1">Buletin Bulanan & Tahunan YPK</a>
-                <a href="#" class="block py-1">Hubungi YPK</a>
-                <a href="#" class="block py-1">Saran & Masukan YPK</a>
+                <a href="berita" class="block py-1">Berita Terbaru</a>
+                <a href="buletin" class="block py-1">Buletin Bulanan & Tahunan YPK</a>
+                <a href="hubungi" class="block py-1">Hubungi YPK</a>
+                <a href="saran" class="block py-1">Saran & Masukan YPK</a>
             </div>
         </div>
 
