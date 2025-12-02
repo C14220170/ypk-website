@@ -1,18 +1,4 @@
 <x-app-layout>
-    {{-- Navbar --}}
-    {{-- <nav class="absolute top-0 left-0 w-full flex justify-between items-center px-10 py-6 bg-transparent z-50">
-        <div class="flex items-center space-x-2">
-            <img src="/images/logo.png" alt="Logo" class="w-24 h-24">
-        </div>
-        <ul class="hidden md:flex space-x-8 text-white font-medium">
-            <li><a href="#" class="hover:text-green-700 font-bold">Home</a></li>
-            <li><a href="#" class="hover:text-green-700 font-bold">About Us</a></li>
-            <li><a href="#" class="hover:text-green-700 font-bold">Gallery</a></li>
-            <li><a href="#" class="hover:text-green-700 font-bold">Shop</a></li>
-            <li><a href="#" class="hover:text-green-700 font-bold">Blog</a></li>
-            <li><a href="#" class="hover:text-green-700 font-bold">Contact</a></li>
-        </ul>
-    </nav> --}}
 
     {{-- Hero Slider --}}
     <div 
@@ -134,32 +120,61 @@
     </section>
 
     {{-- Section: Sponsor / Mitra --}}
-    <section class="relative bg-green-600 text-white py-16 overflow-hidden">
-        {{-- Layering warna atas --}}
-        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-green-800 to-green-600 opacity-90"></div>
+<section class="relative bg-green-600 text-white py-16 overflow-hidden">
 
-        {{-- Layering warna bawah --}}
-        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-green-800 to-green-600 opacity-90"></div>
+    {{-- Layering warna atas --}}
+    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-green-800 to-green-600 opacity-90"></div>
 
-        {{-- Konten utama --}}
-        <div class="relative z-10 text-center mb-12">
-            <h3 class="text-2xl md:text-3xl font-bold tracking-wide">Yayasan Pondok Kasih Didukung Oleh</h3>
-            <p class="text-white/80 mt-2 text-sm md:text-base">
-                Kami berterima kasih atas dukungan para mitra yang turut berkontribusi.
-            </p>
-        </div>
+    {{-- Layering warna bawah --}}
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-green-800 to-green-600 opacity-90"></div>
 
-        {{-- Logo Sponsor --}}
-        <div class="relative z-10 flex flex-wrap justify-center items-center gap-8 px-10">
-            @for ($i = 1; $i <= 7; $i++)
-                <div class="group bg-white/10 hover:bg-white/20 backdrop-blur-sm p-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-                    <img src="/images/sponsor.jpeg" 
-                        alt="Sponsor {{ $i }}" 
-                        class="h-12 md:h-16 object-contain opacity-90 group-hover:opacity-100 transition duration-300">
+    {{-- Judul --}}
+    <div class="relative z-10 text-center mb-12">
+        <h3 class="text-2xl md:text-3xl font-bold tracking-wide">Yayasan Pondok Kasih Didukung Oleh</h3>
+        <p class="text-white/80 mt-2 text-sm md:text-base">
+            Kami berterima kasih atas dukungan para mitra yang turut berkontribusi.
+        </p>
+    </div>
+
+    {{-- LOGO SLIDER RESPONSIVE --}}
+    <div class="relative w-full overflow-hidden z-10">
+
+        <div class="flex items-center gap-10 animate-logo-scroll whitespace-nowrap"
+             style="--speed: 35s">
+
+            {{-- TRACK UTAMA --}}
+            @for ($looping = 1; $looping <= 2; $looping++)
+                <div class="flex gap-10">
+                    @for ($i = 1; $i <= 6; $i++)
+                        <div class="bg-white/10 hover:bg-white/20 backdrop-blur-sm 
+                                    p-4 rounded-xl transition-all duration-300 
+                                    shadow-md hover:shadow-lg min-w-[140px]">
+
+                            <img src="/images/sponsor.jpeg"
+                                 alt="Sponsor"
+                                 class="h-12 md:h-16 object-contain mx-auto opacity-90 group-hover:opacity-100">
+                        </div>
+                    @endfor
                 </div>
             @endfor
         </div>
-    </section>
+
+    </div>
+
+</section>
+
+
+{{-- ANIMASI LOGO --}}
+<style>
+    @keyframes slideLogo {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+
+    .animate-logo-scroll {
+        animation: slideLogo var(--speed) linear infinite;
+    }
+</style>
 
     {{-- Section: Berita Terbaru --}}
     <section class="py-20 bg-white relative z-10">
