@@ -68,54 +68,39 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-6 grid gap-8 md:grid-cols-3">
-            {{-- Card 1 --}}
-            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
-                <img src="/images/banner1.jpg" alt="Program Anak" class="w-full h-48 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-bold mb-2">Pencerdasan Anak Bangsa (PAB)</h3>
-                <p class="text-gray-600 mb-4">
-                    Ketidaksetaraan merenggut banyak hak asasi manusia, salah satunya adalah pendidikan.
-                    Mobil Pintar hadir untuk memberantas ketimpangan dan mendistribusikan pendidikan
-                    secara merata bagi generasi penerus bangsa yang luar biasa.
-                </p>
-                <a href="#" class="text-green-600 font-semibold hover:underline flex items-center">
-                    Kenal lebih dekat
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </a>
-            </div>
+            @foreach ($programs as $program)
+                <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                    <img 
+                        src="{{ asset($program->image) }}"
+                        alt="{{ $program->title }}" 
+                        class="w-full h-48 object-cover rounded-lg mb-4"
+                    >
 
-            {{-- Card 2 --}}
-            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
-                <img src="/images/banner2.jpg" alt="Program PHS" class="w-full h-48 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-bold mb-2">Percepatan Pemenuhan Hak Sipil (PHS): Akta Lahir & Akta Nikah.</h3>
-                <p class="text-gray-600 mb-4">
-                    Pelanggaran hak-hak sipil yang sering dialami oleh masyarakat pra-sejahtera tidak banyak disoroti oleh sebagian besar pihak.
-                    Padahal hak-hak sipil sama pentingnya dengan kebutuhan sandang, pangan dan papan.
-                </p>
-                <a href="#" class="text-green-600 font-semibold hover:underline flex items-center">
-                    Kenal lebih dekat
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </a>
-            </div>
+                    <h3 class="text-xl font-bold mb-2">{{ $program->title }}</h3>
 
-            {{-- Card 3 --}}
-            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
-                <img src="/images/banner3.jpg" alt="Program PAP3B" class="w-full h-48 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-bold mb-2">Pemuda menjadi Agen Perdamaian, Pemersatu dan Perubahan Bangsa (PAP3B).</h3>
-                <p class="text-gray-600 mb-4">
-                    Persembahan berharga dari para Pemuda Indonesia dari seluruh provinsi sebagai wujud kecintaan mereka terhadap persatuan dan kesatuan bangsa dikemas dalam Festival Tahunan ini.
-                </p>
-                <a href="#" class="text-green-600 font-semibold hover:underline flex items-center">
-                    Kenal lebih dekat
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </a>
-            </div>
+                    <p class="text-gray-600 mb-4">
+                        {{ Str::limit($program->description, 150) }}
+                    </p>
+
+                    <a href="{{ route('program.show', $program->id) }}" 
+                    class="text-green-600 font-semibold hover:underline flex items-center">
+                        Kenal lebih dekat
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            @endforeach
         </div>
+
 
         {{-- Tombol Bawah --}}
         <div class="flex justify-center mt-10">
-            <a href="#" class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-full font-semibold">
-                Program YPK Lainnya
-            </a>
+            <a href="{{ route('program.index') }}" 
+                class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-full font-semibold">
+                    Program YPK Lainnya
+                </a>
+
         </div>
     </section>
 

@@ -10,65 +10,46 @@
             </h1>
 
             <p class="text-white/80 mt-6 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
-                Kami sangat menghargai setiap saran dan masukan yang Anda berikan
-                demi meningkatkan pelayanan dan program Yayasan Pondok Kasih.
+                Kami sangat menghargai setiap saran dan masukan Anda untuk meningkatkan pelayanan Yayasan Pondok Kasih.
             </p>
         </div>
     </section>
 
 
-    {{-- ===================== FORM SECTION ===================== --}}
-    <section class="relative -mt-20 px-6 md:px-12 lg:px-48 pb-24 z-20">
-        <div class="max-w-4xl mx-auto bg-white p-10 md:p-12 rounded-3xl shadow-xl border border-gray-200">
+    {{-- ========== CONTENT SECTION ========== --}}
+    <section class="relative -mt-12 z-20">
+        <div class="max-w-6xl mx-auto px-6">
 
-            <h2 class="text-3xl font-bold text-green-800 mb-8 text-center">
-                Form Saran & Masukan
-            </h2>
+            <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+                <div class="relative z-10 max-w-4xl mx-auto">
 
-            <form class="space-y-6">
+                    {{-- Heading --}}
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-8">
+                        Form Saran & Masukan
+                    </h2>
 
-                {{-- Nama --}}
-                <div>
-                    <label class="block font-semibold text-green-800 mb-1">Nama Anda</label>
-                    <input type="text"
-                        class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-green-600 focus:border-green-600"
-                        placeholder="Masukkan nama Anda">
+                    {{-- Placeholder jika GForm belum disisipkan --}}
+                    <div class="w-full h-[700px] bg-gray-100 rounded-xl border border-gray-300 flex items-center justify-center text-gray-500 text-center px-4">
+                        <div>
+                            <p class="text-lg font-semibold mb-2">Google Form Belum Terpasang</p>
+                            <p class="text-sm mb-4">Masukkan link embed Google Form Anda nanti di bagian ini.</p>
+                            <p class="text-xs text-gray-400">(iframe embed akan muncul di area ini)</p>
+                        </div>
+                    </div>
+
+                    {{-- TEMPLATE UNTUK GFORM ASLI --}}
+                    {{--
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/ID-FORM-ANDA/viewform?embedded=true" 
+                        class="w-full h-[700px] mt-6 rounded-xl border"
+                        frameborder="0" marginheight="0" marginwidth="0">
+                        Loading…
+                    </iframe>
+                    --}}
                 </div>
+            </div>
 
-                {{-- Email --}}
-                <div>
-                    <label class="block font-semibold text-green-800 mb-1">Email</label>
-                    <input type="email"
-                        class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-green-600 focus:border-green-600"
-                        placeholder="Masukkan email Anda">
-                </div>
-
-                {{-- Subjek --}}
-                <div>
-                    <label class="block font-semibold text-green-800 mb-1">Subjek</label>
-                    <input type="text"
-                        class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-green-600 focus:border-green-600"
-                        placeholder="Judul pesan Anda">
-                </div>
-
-                {{-- Pesan --}}
-                <div>
-                    <label class="block font-semibold text-green-800 mb-1">Pesan / Masukan</label>
-                    <textarea rows="6"
-                        class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-green-600 focus:border-green-600"
-                        placeholder="Tuliskan pesan atau saran Anda..."></textarea>
-                </div>
-
-                {{-- Tombol Submit --}}
-                <div class="text-center">
-                    <button type="submit"
-                        class="bg-green-600 text-white font-semibold px-8 py-3 rounded-xl shadow hover:bg-green-700 transition">
-                        Kirim Saran
-                    </button>
-                </div>
-
-            </form>
-
+            <div class="h-10"></div>
         </div>
     </section>
 

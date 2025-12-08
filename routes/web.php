@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProgramController;
+use App\Models\Program;
 
 Route::get('/', function () {
-    return view('index');
+    $programs = Program::latest()->take(3)->get();
+    return view('index', compact('programs'));
 });
 
 Route::get('/donasi', function () {
@@ -13,6 +16,8 @@ Route::get('/donasi', function () {
 Route::get('/relawan', function () {
     return view('dukungan.relawan');
 });
+
+Route::resource('program', ProgramController::class);
 
 Route::get('/sejarah', function () {
     return view('tentang.sejarah');
@@ -23,9 +28,9 @@ Route::get('/pengantar', function () {
 Route::get('/visi-misi', function () {
     return view('tentang.visi-misi');
 });
-Route::get('/program', function () {
-    return view('tentang.program');
-});
+// Route::get('/program', function () {
+//     return view('tentang.program.index');
+// });
 
 Route::get('/berita', function () {
     return view('terhubung.berita');
