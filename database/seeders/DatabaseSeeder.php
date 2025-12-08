@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => 'admin',
         ]);
         $this->call(ProgramSeeder::class);
         $this->call(BeritaSeeder::class);

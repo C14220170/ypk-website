@@ -28,7 +28,7 @@
 
                         {{-- Thumbnail --}}
                         <div class="w-full h-52 overflow-hidden">
-                            <img src="{{ asset($program->image) }}"
+                            <img src="{{ asset('storage/' . $program->image) }}"
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                                  alt="{{ $program->title }}">
                         </div>

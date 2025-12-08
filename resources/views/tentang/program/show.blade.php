@@ -15,7 +15,7 @@
         <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
 
             {{-- Gambar --}}
-            <img src="{{ asset($program->image) }}"
+            <img src="{{ asset('storage/' . $program->image) }}"
                  class="w-full h-72 object-cover" alt="{{ $program->title }}">
 
             {{-- Isi --}}

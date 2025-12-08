@@ -28,7 +28,7 @@
 
                         {{-- Thumbnail --}}
                         <div class="w-full h-52 overflow-hidden">
-                            <img src="{{ asset($berita->image) }}"
+                            <img src="{{ asset('storage/' . $berita->image) }}"
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                                  alt="{{ $berita->title }}">
                         </div>

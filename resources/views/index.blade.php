@@ -169,63 +169,62 @@
         </div>
 
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6">
-            {{-- Kartu 1 --}}
-            <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                    <img src="/images/banner1.jpg" alt="Berita 1" class="w-full h-48 object-cover">
-                    {{-- <span
-                        class="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">PERMATA
-                        NUSANTARA</span> --}}
-                </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold mb-2">Yayasan Pondok Kasih Peduli Papua: Menyalakan Harapan Dari Tanah Yang
-                        Terlupakan</h3>
-                    <p class="text-gray-600 text-sm mb-4">Yayasan Pondok Kasih hadir untuk mengatasi kesenjangan sosial dan
-                        pendidikan di wilayah terpencil Papua.</p>
-                    <a href="#" class="text-green-700 font-semibold text-sm hover:underline">READ MORE →</a>
-                    <p class="text-gray-400 text-xs mt-3">06 Okt 2025</p>
-                </div>
-            </div>
+            
+            {{-- LOOPING DATA BERITA DARI DATABASE --}}
+            @foreach($beritas as $berita)
+                <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                    
+                    {{-- Gambar Berita --}}
+                    <div class="relative h-48 bg-gray-100">
+                        @if($berita->image)
+                            <img src="{{ asset('storage/' . $berita->image) }}" 
+                                 alt="{{ $berita->title }}" 
+                                 class="w-full h-full object-cover">
+                        @else
+                            {{-- Placeholder jika tidak ada gambar --}}
+                            <div class="flex items-center justify-center h-full text-gray-400">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                        @endif
+                        
+                        {{-- Label Kategori (Opsional, jika ada kolom kategori) --}}
+                        {{-- <span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">TERBARU</span> --}}
+                    </div>
 
-            {{-- Kartu 2 --}}
-            <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                    <img src="/images/banner2.jpg" alt="Berita 2" class="w-full h-48 object-cover">
-                    {{-- <span
-                        class="absolute top-3 left-3 bg-yellow-600 text-white text-xs font-semibold px-3 py-1 rounded-full">UNCATEGORIZED</span> --}}
-                </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold mb-2">Yayasan Pondok Kasih dan PT Global Securindo Utama Bersinergi Membangun
-                        SDM Yang Berdampak</h3>
-                    <p class="text-gray-600 text-sm mb-4">Kolaborasi untuk meningkatkan kualitas sumber daya manusia dalam
-                        bidang sosial dan pendidikan.</p>
-                    <a href="#" class="text-green-700 font-semibold text-sm hover:underline">READ MORE →</a>
-                    <p class="text-gray-400 text-xs mt-3">05 Agu 2025</p>
-                </div>
-            </div>
+                    {{-- Konten Berita --}}
+                    <div class="p-5 flex flex-col flex-grow">
+                        {{-- Judul --}}
+                        <h3 class="text-lg font-bold mb-2 line-clamp-2" title="{{ $berita->title }}">
+                            {{ $berita->title }}
+                        </h3>
 
-            {{-- Kartu 3 --}}
-            <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                    <img src="/images/banner3.jpg" alt="Berita 3" class="w-full h-48 object-cover">
-                    {{-- <span
-                        class="absolute top-3 left-3 bg-green-700 text-white text-xs font-semibold px-3 py-1 rounded-full">TAMAN
-                        BHINNEKA (NDC)</span> --}}
+                        {{-- Deskripsi Singkat (Dibatasi 100 karakter) --}}
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                            {{ Str::limit($berita->description, 100) }}
+                        </p>
+
+                        {{-- Tombol Read More & Tanggal --}}
+                        <div class="mt-auto">
+                            {{-- Arahkan ke route detail berita --}}
+                            <a href="{{ route('berita.show', $berita->id) }}" class="text-green-700 font-semibold text-sm hover:underline inline-flex items-center">
+                                READ MORE 
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                            
+                            {{-- Tanggal Format (Contoh: 08 Des 2025) --}}
+                            <p class="text-gray-400 text-xs mt-3 border-t pt-3">
+                                {{ $berita->created_at->format('d M Y') }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold mb-2">Soft Opening Taman Bhinneka: Wisata Toleransi dan Simbol Keberagaman
-                        di Kota Pahlawan</h3>
-                    <p class="text-gray-600 text-sm mb-4">Festival tahunan yang memperingati Hari Kebangkitan Nasional
-                        dengan semangat persatuan.</p>
-                    <a href="#" class="text-green-700 font-semibold text-sm hover:underline">READ MORE →</a>
-                    <p class="text-gray-400 text-xs mt-3">21 Mei 2025</p>
-                </div>
-            </div>
+            @endforeach
+
         </div>
 
-        {{-- Tombol Bawah --}}
+        {{-- Tombol Lihat Semua --}}
         <div class="flex justify-center mt-10">
-            <a href="#" class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-full font-semibold">
+            <a href="{{ route('berita.index') }}" class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-full font-semibold transition duration-300 shadow-md hover:shadow-lg">
                 Berita YPK Lainnya
             </a>
         </div>

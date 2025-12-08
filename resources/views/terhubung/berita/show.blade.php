@@ -22,7 +22,7 @@
 
             {{-- IMAGE --}}
             <div class="w-full h-[350px] md:h-[450px] overflow-hidden rounded-3xl shadow-lg border border-gray-200">
-                <img src="{{ asset($berita->image) }}"
+                <img src="{{'storage/' . asset($berita->image) }}"
                      alt="{{ $berita->title }}"
                      class="w-full h-full object-cover">
             </div>
