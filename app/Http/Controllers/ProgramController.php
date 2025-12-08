@@ -9,7 +9,7 @@ class ProgramController extends Controller
 {
     public function index()
     {
-        $programs = Program::latest()->paginate(6); // 6 per page
+        $programs = Program::latest()->paginate(6);
         return view('tentang.program.index', compact('programs'));
     }
 
@@ -17,7 +17,6 @@ class ProgramController extends Controller
     {
         return view('tentang.program.show', compact('program'));
     }
-
 
     public function create()
     {
