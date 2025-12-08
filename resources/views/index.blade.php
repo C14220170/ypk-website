@@ -9,19 +9,19 @@
                     image: '/images/banner1.jpg',
                     title: 'Anak',
                     description: 'Serangkaian program dan intervensi yang dirancang untuk mendukung kesejahteraan, perkembangan dan hak-hak anak.',
-                    btn1: { text: 'Kenal lebih dekat', link: '#' },
+                    btn1: { text: 'Kenal lebih dekat', link: '/program' },
                 },
                 {
                     image: '/images/banner2.jpg',
                     title: 'Pemuda',
                     description: 'Mendorong kaum muda untuk berkomitmen pada perdamaian dan persatuan tanpa memandang suku, ras, dan agama untuk mendukung transformasi bangsa.',
-                    btn1: { text: 'Kenal lebih dekat', link: '#' },
+                    btn1: { text: 'Kenal lebih dekat', link: '/program' },
                 },
                 {
                     image: '/images/banner3.jpg',
                     title: 'Keluarga',
                     description: 'Meliputi pelatihan, konseling, pendidikan, dan layanan untuk membantu keluarga mengatasi kemiskinan, konflik, atau masalah kesehatan, sehingga mereka bisa hidup lebih baik di masyarakat.',
-                    btn1: { text: 'Kenal lebih dekat', link: '#' },
+                    btn1: { text: 'Kenal lebih dekat', link: '/program' },
                 }
             ]
         }" 
