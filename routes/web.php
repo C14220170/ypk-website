@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BuletinController;
 use App\Models\Berita;
 use App\Models\Program;
+use App\Models\Buletin;
 use App\Http\Controllers\Admin\ProgramAdminController;
 use App\Http\Controllers\Admin\BeritaAdminController;
+use App\Http\Controllers\Admin\BuletinAdminController;
 
 Route::get('/', function () {
     $programs = Program::latest()->take(3)->get();
@@ -16,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('program', ProgramController::class);
+Route::resource('buletin', BuletinController::class);
 Route::resource('berita', BeritaController::class)
     ->parameters(['berita' => 'berita']);
 Route::get('/donasi', function () {
@@ -33,9 +36,9 @@ Route::get('/pengantar', function () {
 Route::get('/visi-misi', function () {
     return view('tentang.visi-misi');
 });
-Route::get('/buletin', function () {
-    return view('terhubung.buletin');
-});
+// Route::get('/buletin', function () {
+//     return view('terhubung.buletin');
+// });
 Route::get('/hubungi', function () {
     return view('terhubung.hubungi');
 });
@@ -48,9 +51,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     Route::get('/', function () {
         $totalBerita = Berita::count();
-        $totalProgram = Program::count(); // Asumsi kamu sudah buat Model Program
+        $totalProgram = Program::count();
+        $totalBuletin = Buletin::count();
         
-        return view('dashboard', compact('totalBerita', 'totalProgram'));
+        return view('dashboard', compact('totalBerita', 'totalProgram', 'totalBuletin'));
     })->name('dashboard');
 
     Route::resource('program', ProgramAdminController::class, [
@@ -61,6 +65,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         'as' => 'admin'
     ])->parameters([
         'berita' => 'berita'
+    ]);
+    Route::resource('buletin', BuletinAdminController::class, [
+        'as' => 'admin'
     ]);
 });
 

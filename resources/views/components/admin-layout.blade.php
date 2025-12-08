@@ -31,7 +31,6 @@
                             </a>
 
                             {{-- Menu Berita --}}
-                            {{-- Perhatikan request()->routeIs('admin.berita.*') agar menu aktif saat di halaman create/edit berita juga --}}
                             <a href="{{ route('admin.berita.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out {{ request()->routeIs('admin.berita.*') ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
                                 Kelola Berita
                             </a>
@@ -40,6 +39,12 @@
                             <a href="{{ route('admin.program.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out {{ request()->routeIs('admin.program.*') ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
                                 Kelola Program
                             </a>
+
+                            {{-- Menu Buletin (BARU) --}}
+                            <a href="{{ route('admin.buletin.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out {{ request()->routeIs('admin.buletin.*') ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}">
+                                Kelola Buletin
+                            </a>
+
                         </div>
                     </div>
 
@@ -51,7 +56,7 @@
                             {{-- Tombol Logout --}}
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <button type="submit" class="text-sm text-red-600 hover:text-red-900 font-semibold">
+                                <button type="submit" class="text-sm text-red-600 hover:text-red-900 font-semibold border border-red-200 px-3 py-1 rounded hover:bg-red-50 transition">
                                     Logout
                                 </button>
                             </form>
